@@ -1,0 +1,10 @@
+<%array_answer = @word_answer.split('')%>
+
+<% if @user['found'] == false %>
+  <p>Sorry but <%= @word_answer%> does not seem to be a valid English word...</p>
+<% elsif array_answer.each {|letter| @array.include?(letter) == false} %>
+<%= raise %>
+  <p>Sorry but <%= @word_answer%> can't be build out of <%= @array.join(',') %></p>
+<% else %>
+  <p>Congratulations! <%= @user['found']%> is a valid English word!</p>
+<%end%>
